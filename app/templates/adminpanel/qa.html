@@ -1,0 +1,27 @@
+{% extends "adminpanel/module.html" %}
+
+{% block page_head %}
+    <link rel="stylesheet" type="text/css" href="/media/css/adminpanel/qa.css"/>
+{% endblock %}
+
+{% block module_header %}
+    Вопрос-Ответ
+{% endblock %}
+
+{% block module_body %}
+    {% ifequal action 'view.all' %}
+        <table>
+            {% for q in question_list %}
+                <tr>
+                    <td></td>
+                    <td>{{ q.date }}</td>
+                    <td>{{ q.owner.first_name }}</td>
+                    <td>{{ q.text }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endifequal %}
+    {% ifequal action 'view.selected' %}
+        
+    {% endifequal %}
+{% endblock %}

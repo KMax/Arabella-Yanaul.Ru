@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/*Глобальное обнуление отступов и полей.*/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+header#page_header {
+    text-align:right;
+    background-color:#a9a9a9;
+}
+
+aside#menu {
+    background-color:#a9a9a9;
+    display: inline-block;
+
+    width: 200px;
+}
+
+aside#menu a{
+    display:block;
+}
+
+section#page_content {
+    display:inline-block;
+    width:80%;
+    position:relative;
+    left:25px;
+
+    background-color:#deb887;
+}

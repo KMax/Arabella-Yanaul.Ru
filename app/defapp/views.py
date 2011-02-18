@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response
+from django.contrib import auth
+from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 
 def start_page(request):
     return render_to_response('index.html',locals())
@@ -15,3 +18,17 @@ def prices(request):
 
 def contacts(request):
     return render_to_response('contacts.html', locals())
+
+def login_page(request):
+    username = request.POST.get('username','')
+    password = request.POST.get('password','')
+    user = auth.authenticate(username=username, password=password)
+    if user is not None and user.is_active:
+        auth.login(request,user)
+        return HttpResponseRedirect("/")
+    else:
+        return render_to_response('login.html',locals())
+
+def logout_page(request):
+    auth.logout(request)
+    return HttpResponseRedirect("/")

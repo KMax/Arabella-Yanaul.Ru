@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="/media/css/adminpanel/base.css"/>
+    <title>Панель управления</title>
+    {% block page_head %}
+    {% endblock %}
+</head>
+<body>
+    <section id="page">
+        <header id="page_header">
+            Привет, {{ request.user.first_name }} {{ request.user.last_name }} | <a href="/logout" >Выйти</a>
+        </header>
+        <aside id="menu">
+            <nav>
+                Разделы:
+                <a href="/admin/qa">Вопрос-Ответ</a>
+                <a href="/admin/gallery">Галерея</a>
+                <a href="/admin/services">Услуги</a>
+            </nav>
+        </aside>
+        <section id="page_content">
+        {% block page_content %}
+        {% endblock %}
+        </section>
+        <footer>
+        </footer>
+    </section>
+</body>
+</html>

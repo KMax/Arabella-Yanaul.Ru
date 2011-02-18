@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="/media/css/module.css"/>
+{% block module_page_header %}
+{% endblock %}
+{% endblock %}
+
+{% block page_body %}
+<header id="module_header">
+    {% block module_name %}Название модуля{% endblock %}
+</header>
+<aside id="module_info">
+    {% block module_info %}
+    Краткая информация о модуле
+    {% endblock %}
+</aside>
+<section id="module_content">
+    {% block module_content %}
+    Содержимое
+    {% endblock %}
+</section>
+<footer id="module_footer">
+    {% block module_footer %}
+    Подвал модуля
+    {% endblock %}
+</footer>
+{% endblock %}
