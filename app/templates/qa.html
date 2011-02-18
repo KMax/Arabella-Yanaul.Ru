@@ -3,8 +3,8 @@
 {% block module_page_header %}
     <link rel="stylesheet" type="text/css" href="/media/css/smoothness/jquery-ui-1.8.9.custom.css"/>
     <link rel="stylesheet" type="text/css" href="/media/css/qa.css"/>
-    <script type="text/javascript" src="http://yandex.st/jquery/1.4.4/jquery.js"></script>
-    <script type="text/javascript" src="/media/js/jquery-ui-1.8.9.custom.min.js"></script>
+    <script type="text/javascript" src="http://yandex.st/jquery/1.5.0/jquery.js"></script>
+    <script type="text/javascript" src="http://yandex.st/jquery-ui/1.8.9/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/media/js/qa.js"></script>
 {% endblock %}
 
@@ -16,22 +16,22 @@
     <nav id="type">
         <div>
             <a class="select" href="/qa/questions#reviews">Вопросы</a>
-            <a class="add" href="/qa/#reviews">+ задать вопрос</a>
+            <a id="Q" class="add" href="/qa/#reviews">+ задать вопрос</a>
         </div>
         <div>
             <a class="select" href="/qa/suggestions#reviews">Предложения</a>
-            <a class="add" href="/qa/#reviews">+ предложить</a>
+            <a id="S" class="add" href="/qa/#reviews">+ предложить</a>
         </div>
         <div>
             <a class="select" href="/qa/complaints#reviews">Жалобы</a>
-            <a class="add" href="/qa/#reviews">+ пожаловаться</a>
+            <a id="C" class="add" href="/qa/#reviews">+ пожаловаться</a>
         </div>
     </nav>
     <ul id="reviews">
         {% for question in question_list %}
             {% if question.answer %}
                 <li>
-                    <h5>{{ question.date|date:"SHORT_DATE_FORMAT" }}, {{ question.get_type_display }}, {{ question.owner }}:</h5>
+                    <h5>{{ question.date|date:"SHORT_DATE_FORMAT" }}, {{ question.get_type_display }}, {{ question.owner_name }}:</h5>
                     <p>{{ question.text }}</p>
                     <div id="answer">
                         <h5>Отвечает: {{ question.answer.owner }}</h5>

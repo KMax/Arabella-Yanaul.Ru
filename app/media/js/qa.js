@@ -9,11 +9,14 @@ $(function(){
     $("section#module_content ul li").click(function(){
         $(this).find("div#answer").toggle();
     })
-    
-    $("div a.add").click(add_review)
+
+    //Отправка отзыва
+    $("div a.add").click(function(){
+                            add_review($(this).attr("id"))
+                        })
 })
 
-function add_review(){
+function add_review(type){
     var form = $("<div id='dialog-form' title='Добавить отзыв'>"+
 	"<p class='validateTips'>Все поля должны быть заполнены.</p>"+
 	    "<form>"+
@@ -23,7 +26,7 @@ function add_review(){
                 "<label for='email'>Емайл</label>"+
                 "<input type='email' name='email' id='email' value=''/>"+
                 "<label for='question'>Вопрос</label>"+
-                "<input type='text' name='question' id='question' value=''/>"+
+                "<textarea name='question' id='question' value=''/>"+
             "</fieldset>"+
 	    "</form>"+
     "</div>")
@@ -32,7 +35,7 @@ function add_review(){
 
     var name = $("input#name", form),
         email = $("input#email",form),
-        question = $("input#question",form)
+        question = $("textarea#question",form)
 
     form.dialog(
             {
@@ -43,7 +46,7 @@ function add_review(){
                 buttons: {
                     "Отправить": function(){
                         $.post("/qa/add/",
-                                { name: name.val(), email: email.val(), review: question.val()},
+                                { name: name.val(), email: email.val(), review: question.val(), type: type},
                                 function(data){
                                     alert(data)
                                 })

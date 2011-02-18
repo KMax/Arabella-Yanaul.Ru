@@ -24,9 +24,10 @@ def qa_add_question(request):
     if (request.method == 'POST') & (request.is_ajax()):
         q = Review()
         q.text = request.POST.get("review")
-        q.owner = request.POST.get("name")
+        q.owner_name = request.POST.get("name")
         q.date = datetime.now()
-        q.type = 'Q'
+        q.type = request.POST.get("type")
+        q.owner_email = request.POST.get("email")
         q.save()
         return HttpResponse("All okey!")
     else:

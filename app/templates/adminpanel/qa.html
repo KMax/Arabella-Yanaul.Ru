@@ -2,6 +2,7 @@
 
 {% block page_head %}
     <link rel="stylesheet" type="text/css" href="/media/css/adminpanel/qa.css"/>
+    <script type="text/javascript" src="/media/js/admin/qa.js"></script>
 {% endblock %}
 
 {% block module_header %}
@@ -9,19 +10,22 @@
 {% endblock %}
 
 {% block module_body %}
+    <table id="reviews">
+        <tr><td>№</td><td>Дата</td><td>Имя пользователя</td><td>Текст отзыва</td><td></td></tr>
     {% ifequal action 'view.all' %}
-        <table>
-            {% for q in question_list %}
+            {% for r in review_list %}
                 <tr>
-                    <td></td>
-                    <td>{{ q.date }}</td>
-                    <td>{{ q.owner.first_name }}</td>
-                    <td>{{ q.text }}</td>
+                    <td id="id">{{ r.id }}</td>
+                    <td>{{ r.date }}</td>
+                    <td>{{ r.owner_name }}</td>
+                    <td>{{ r.text }}</td>
+                    <td id="action">|<a action="delete" href="#reviews">удалить</a>|<a action="show" href="#reviews">показать</a>|</td>
                 </tr>
+                <tr class="show"></tr>
             {% endfor %}
-        </table>
     {% endifequal %}
     {% ifequal action 'view.selected' %}
         
     {% endifequal %}
+    </table>
 {% endblock %}

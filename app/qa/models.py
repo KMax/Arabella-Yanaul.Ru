@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 from django.db import models
 from django.db.models.fields import DateTimeField
 
@@ -10,8 +11,8 @@ class Answer(models.Model):
     def __unicode__(self):
         return u"%s - %s %s"%(
             unicode(self.owner),
-            unicode(self.question.owner),
-            unicode(self.question.date),
+            unicode(self.review.owner_name),
+            unicode(self.review.date),
         )
 
 class Review(models.Model):
@@ -22,14 +23,22 @@ class Review(models.Model):
     )
     text = models.TextField(verbose_name='Текст')
     date = models.DateTimeField(verbose_name='Дата и время публикации')
-    owner = models.CharField(verbose_name='Имя пользователя', max_length=100)
+    owner_name = models.CharField(verbose_name='Имя пользователя', max_length=100)
+    owner_email = models.EmailField(verbose_name='Емайл пользователя')
     answer = models.OneToOneField(Answer, related_name='answer', verbose_name='Ответ', null=True, blank=True)
     type = models.CharField(max_length=1, choices=TYPES, verbose_name='Тип')
 
     def __unicode__(self):
-        return u"%s %s %s %s" % (
+        return u"[%s] [%s] [%s] %s" % (
             unicode(self.date.isoformat()),
             self.get_type_display(),
-            self.owner,
+            self.owner_name,
             self.text,
         )
+
+#Serialize Review object to JSON object
+class ReviewJSONEncoder(json.JSONEncoder):
+    def default(self,o):
+        if isinstance(o,Review):
+            return {'id':o.id, 'type':o.get_type_display(), 'owner_name':o.owner_name}
+        return json.JSONEncoder().default(self,o)
