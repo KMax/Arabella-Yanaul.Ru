@@ -10,5 +10,6 @@ urlpatterns = patterns('adminpanel.qa.views',
         (r'show/supply','get_supply_review'),
         (r'show/question','get_question_review'),
         (r'show','get_review'),
+        (r'save/answer','save_answer'),
         (r'delete','delete_review'),
 )

@@ -28,6 +28,11 @@ $(function() {
      * Установка обработчика клика на поле в меню
      */
     $("aside#menu nav a").click(function(){ action_tab($(this)) });
+
+    /**
+     * Установка обработчика клика на кнопке "Ответить"
+     */
+    $("tr.show button").live("click",function(){ save_answer($(this)) });
 })
 
 /**
@@ -64,13 +69,40 @@ function show_review(obj){
     }else{
         //Если нет, то скачиваем
         row.after("<tr class='show'><td colspan='5'></td></tr>");
-        showArea = $("table#reviews tr:has(td[id="+id+"]) + tr.show td")
-                .css("display", "none");
+        showArea = $("table#reviews tr:has(td[id="+id+"]) + tr.show td");
+        showArea.text("Пожалуйста, подождите...");
         $.post('qa/show/', 'id='+id, function(data) {
-            
-                showArea.show('fast').text(data.text);
+            if(data.has_answer){
+                showArea.html("<div class='review-text'>"+data.text+"</div>"+
+                                "<div>"+data.answer_text+"</div>");
+            }else{
+                showArea.html("<div class='review-text'>"+data.text +"</div>"+
+                        "<textarea id='"+id+"'/><button>Ответить</button>");
+            }
         });
     }
+}
+
+function save_answer(eventObj){
+    var id = eventObj.parent().find('textarea').attr('id');
+    var showArea = $("table#reviews tr:has(td[id="+id+"]) + tr.show td");
+    $.post('qa/save/answer',
+        {
+            id: +id,
+            text: eventObj.parent().find('textarea').val()
+        },
+        function(data,textStatus){
+            if(textStatus == 'success'){
+                showArea.empty().text('Ваш ответ сохранен.');
+                window.setTimeout(
+                   function(){
+                       showArea.parent().remove();
+                       $("table#reviews tr:has(td[id="+id+"])").remove();
+                   },1500);
+            }else if(textStatus == 'error'){
+                showArea.text('Ошибка при записи ответа.')
+            }
+        });
 }
 
 /**
@@ -80,7 +112,7 @@ function show_review(obj){
  */
 function json_to_html_review(obj){
     return "<tr>"+
-                "<td id='id'>"+obj.id+"</td>"+
+                "<td id="+obj.id+">"+obj.id+"</td>"+
                 "<td>"+obj.owner_name+"</td>"+
                 "<td>"+obj.date+"</td>"+
                 "<td>"+obj.owner_email+"</td>"+
@@ -100,10 +132,12 @@ function json_to_html_review(obj){
  */
 function get_and_put_review(uri,obj,func){
     $.post(uri, null, function(data, textStatus){
-                $.each(data, function(key,val){
-                    obj.append(func(val))
-                })
-            },'json');
+        var list;
+        $.each(data, function(key,val){
+            list += func(val);
+        })
+        obj.append(list);
+    },'json');
 }
 
 /**

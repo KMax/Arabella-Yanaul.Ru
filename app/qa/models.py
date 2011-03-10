@@ -40,17 +40,22 @@ class Review(models.Model):
         if self.answer is None:
             return False
         else:
-            return  True
+            return True
 
 #Serialize Review object to JSON object
 class ReviewJSONEncoder(json.JSONEncoder):
     def default(self,o):
         if isinstance(o,Review):
-            return {'id':o.id, 'type':o.get_type_display(),
+            json = {'id':o.id, 'type':o.get_type_display(),
                     'date':o.date.isoformat(),
                     'owner_name':o.owner_name,
                     'text':o.text,
                     'owner_email': o.owner_email,
                     'has_answer': o.has_answer()
-                }
+                    }
+            if o.has_answer():
+                json['answer_id'] = o.answer.id
+                json['answer_text'] = o.answer.text
+                json['answer_owner'] = o.answer.owner
+            return json
         return json.JSONEncoder().default(o)
