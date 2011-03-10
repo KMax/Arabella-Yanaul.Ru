@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="/media/css/adminpanel/base.css"/>
+    <script type="text/javascript" src="http://yandex.st/jquery/1.5.0/jquery.js"></script>
     <title>Панель управления</title>
     {% block page_head %}
     {% endblock %}
@@ -10,14 +11,20 @@
 <body>
     <section id="page">
         <header id="page_header">
-            Привет, {{ request.user.first_name }} {{ request.user.last_name }} | <a href="/logout" >Выйти</a>
+            <a href="http://127.0.0.1:8000">Перейти на сайт</a> | Привет, {{ request.user.first_name }} {{ request.user.last_name }} | <a href="/logout" >Выйти</a>
         </header>
         <aside id="menu">
+            Разделы:
             <nav>
-                Разделы:
-                <a href="/admin/qa">Вопрос-Ответ</a>
-                <a href="/admin/gallery">Галерея</a>
-                <a href="/admin/services">Услуги</a>
+                <ul>
+                    <li>
+                        <a href="/admin/qa">Вопрос-Ответ</a>
+                        {% block menu_qa %}
+                        {% endblock %}
+                    </li>
+                    <li><a href="/admin/gallery">Галерея</a></li>
+                    <li><a href="/admin/services">Услуги</a></li>
+                </ul>
             </nav>
         </aside>
         <section id="page_content">

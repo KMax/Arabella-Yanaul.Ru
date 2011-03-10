@@ -1,31 +1,34 @@
-{% extends "adminpanel/module.html" %}
+{% extends "adminpanel/base.html" %}
 
 {% block page_head %}
     <link rel="stylesheet" type="text/css" href="/media/css/adminpanel/qa.css"/>
     <script type="text/javascript" src="/media/js/admin/qa.js"></script>
 {% endblock %}
 
-{% block module_header %}
-    Вопрос-Ответ
+{% block menu_qa %}
+    <nav id="menu_qa">
+        <a class="selected" href=#unanswered>новые</a>
+        <a href=#complaint >жалобы</a>
+        <a href=#supply >предложения</a>
+        <a href=#question >вопросы</a>
+    </nav>
 {% endblock %}
 
-{% block module_body %}
-    <table id="reviews">
-        <tr><td>№</td><td>Дата</td><td>Имя пользователя</td><td>Текст отзыва</td><td></td></tr>
-    {% ifequal action 'view.all' %}
-            {% for r in review_list %}
-                <tr>
-                    <td id="id">{{ r.id }}</td>
-                    <td>{{ r.date }}</td>
-                    <td>{{ r.owner_name }}</td>
-                    <td>{{ r.text }}</td>
-                    <td id="action">|<a action="delete" href="#reviews">удалить</a>|<a action="show" href="#reviews">показать</a>|</td>
-                </tr>
-                <tr class="show"></tr>
-            {% endfor %}
-    {% endifequal %}
-    {% ifequal action 'view.selected' %}
-        
-    {% endifequal %}
+{% block page_content %}
+    <table class="bottom-radius" id="reviews">
+        <thead>
+            <tr><td>Номер</td><td>Имя пользователя</td><td>Дата публикации</td><td>Емайл</td><td></br></td></tr>
+        </thead>
+        <tbody>
+        {% for r in review_list %}
+            <tr>
+                <td id="{{ r.id }}">{{ r.id }}</td>
+                <td>{{ r.owner_name }}</td>
+                <td>{{ r.date }}</td>
+                <td>{{ r.owner_email }}</td>
+                <td id="action">|<a action="delete" href="#reviews">удалить</a>|</td>
+            </tr>
+        {% endfor %}
+        </tbody>
     </table>
 {% endblock %}

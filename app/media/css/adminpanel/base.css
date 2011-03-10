@@ -6,27 +6,52 @@
   padding: 0;
 }
 
+a:link,
+a:visited {
+    color:#000000;
+}
+a:active,
+a:hover{
+    color:#dc143c;
+    text-decoration:none;
+}
+
+#page {
+    min-width: 970px;
+}
+
+/*Page_Header, Меню "Разделы"*/
+header#page_header,
+aside#menu{
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+    box-shadow: 0 5px 5px #c8c8c8;
+    background-color:#d9d9d9;
+}
+
+/*Page_Header*/
 header#page_header {
-    text-align:right;
-    background-color:#a9a9a9;
-}
-
-aside#menu {
-    background-color:#a9a9a9;
-    display: inline-block;
-
-    width: 200px;
-}
-
-aside#menu a{
+    height:30px;
+    padding-top:10px;
+    padding-left:20px;
+    margin-bottom:20px;
     display:block;
 }
 
-section#page_content {
-    display:inline-block;
-    width:80%;
-    position:relative;
-    left:25px;
+/*Меню "Разделы"*/
+aside#menu {
+    width: 200px;
+    padding: 10px 0 10px 20px;
+    display: inline-block;
+    float: left;
+}
 
-    background-color:#deb887;
+aside#menu li {
+    list-style: square;
+}
+/*----*/
+
+section#page_content {
+    margin-left:20px;
+    display:inline-block;
 }

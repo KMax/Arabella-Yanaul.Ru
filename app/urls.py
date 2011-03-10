@@ -1,12 +1,10 @@
 from django.conf.urls.defaults import patterns, include
-import adminpanel
 from defapp.views import start_page
 from defapp.views import services
 from defapp.views import about_us
 from defapp.views import login_page
 from defapp.views import logout_page
 from django.contrib import admin
-from adminpanel.views import admin_page
 from app import settings
 
 admin.autodiscover()
