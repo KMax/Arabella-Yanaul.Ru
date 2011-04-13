@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from news.models import News
 
 def start_page(request):
-    news_list = News.objects.all()
+    news_list = News.objects.order_by('-date')
     return render_to_response('index.html',locals())
 
 def about_us(request):

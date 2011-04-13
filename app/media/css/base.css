@@ -31,8 +31,8 @@ header#logo {
 #page_body {
   width: 100%;
   background-image: url("/media/media/page_bg.png");
-  /*background-position: 226px 0px;
-  background-attachment: fixed;*/
+  background-position: 0px -2px;
+  /*background-attachment: fixed;*/
   border: 1px solid #000000;
   box-shadow: -5px 10px 10px 5px #000000;
   margin-bottom: 50px;
