@@ -38,10 +38,6 @@ header#logo {
   margin-bottom: 50px;
 }
 
-section h1 {
-
-}
-
 /*---Main menu---*/
 #main {
   width:100%;
@@ -52,6 +48,8 @@ section h1 {
   color: white;
   text-decoration: none;
   font-size: 18px;
+  font-family: serif;
+  font-stretch: expanded;
   text-shadow: -5px 5px 3px #000000;
 }
 
@@ -62,8 +60,10 @@ section h1 {
 .menu:hover{
   transition:all ls easy-in-out;
   -moz-transition:all ls easy-in-out;
+  -webkit-transition:all ls easy-in-out;
   transform: translate(-1px, 1px);
   -moz-transform: translate(-1px, 2px);
+  -webkit-transform: translate(-1px, 2px);
 }
 
 nav ul li {
@@ -78,7 +78,7 @@ nav ul li {
   margin:0 auto;
   width: 850px;
   height: 300px;
-  box-shadow: -5px 10px 20px 3px #000000;
+  box-shadow: -5px 5px 20px 2px #000000;
 }
 /*---Slide menu---END*/
 

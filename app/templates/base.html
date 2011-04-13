@@ -7,37 +7,20 @@
   <link rel="stylesheet" type="text/css" href="/media/css/coin-slider-styles.css"/>
   <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
   <script type="text/javascript" src="/media/js/coin-slider.min.js"></script>
+  <script type="text/javascript" src="/media/js/base.js"></script>
   {% block head %}
   {% endblock head %}
-  <script type="text/javascript">
-      $(document).ready(function() {
-          $('#coin-slider').coinslider(
-                  {
-                    width: 850,
-                    height: 300,
-                    spw: 7,
-                    sph: 5,
-                    navigation: true,
-                    delay: 5000,
-                    links: false,
-                    effect: 'rain',
-                    titleSpeed: 500,
-                    sDelay: 30,
-                    opacity: 0.4
-                  });
-      });
-  </script>
 </head>
 <body>
   <header id=logo>Лого</header>
   <section id="page_body">
     <nav id="main">
       <ul>
-        <li><a class="menu" href=#>Главная</a></li>
-        <li><a class="menu" href=#>Услуги</a></li>
+        <li><a class="menu" href="/">Главная</a></li>
+        <li><a class="menu" href="services/">Услуги</a></li>
         <li><a class="menu" href=#>Галерея</a></li>
         <li><a class="menu" href=#>Вопрос-Ответ</a></li>
-        <li><a class="menu" href=#>О Салоне</a></li>
+        <li><a class="menu" href="/about/">О Салоне</a></li>
       </ul>
     </nav>
     <nav id="images">
@@ -61,8 +44,8 @@
       {% endblock content %}
     </section>
     <footer>
-      Copyright&copy; 2011
-      <section>Разработка: <a href="#">Колчин Максим</a> Дизайн: <a href="#">Гулый Сергей</a></section>
+      Текущая версия оптимизированна под <a href="http://www.mozilla.com/ru/firefox/">Firefox 4</a>
+      <section>Разработка: <a href="http://kolmax.pp.ru">Колчин Максим</a> Дизайн: <a href="#">Гулый Сергей</a></section>
     </footer>
   </section>
 </body>
