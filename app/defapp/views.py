@@ -2,9 +2,10 @@
 from django.shortcuts import render_to_response
 from django.contrib import auth
 from django.http import HttpResponseRedirect
-from django.contrib.auth.models import User
+from news.models import News
 
 def start_page(request):
+    news_list = News.objects.all()
     return render_to_response('index.html',locals())
 
 def about_us(request):

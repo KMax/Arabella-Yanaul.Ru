@@ -4,36 +4,65 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>Салон красоты "Арабэлла"</title>
   <link rel="stylesheet" type="text/css" href="/media/css/base.css"/>
-  {% block header %}
-  {% endblock %}
+  <link rel="stylesheet" type="text/css" href="/media/css/coin-slider-styles.css"/>
+  <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
+  <script type="text/javascript" src="/media/js/coin-slider.min.js"></script>
+  {% block head %}
+  {% endblock head %}
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('#coin-slider').coinslider(
+                  {
+                    width: 850,
+                    height: 300,
+                    spw: 7,
+                    sph: 5,
+                    navigation: true,
+                    delay: 5000,
+                    links: false,
+                    effect: 'rain',
+                    titleSpeed: 500,
+                    sDelay: 30,
+                    opacity: 0.4
+                  });
+      });
+  </script>
 </head>
 <body>
-  <section id="page">
-    <header>
-      <nav id="special">
-        {% if request.user.is_authenticated %}
-            <a href="/logout">Выйти</a><br/>
-            <a href="/admin">Панель администратора</a>
-        {% else %}
-            <a href="/login">Войти</a><br/>
-        {% endif %}
-      </nav>
-        <img src="/media/media/logo.jpg"/>
-      <nav id="main">
-        <a href="/">Главная</a>
-        <a href="/services">Услуги</a>
-        <a href="/gallery">Галерея</a>
-        <a href="/qa">Вопрос-Ответ</a>
-        <a href="/about">О Салоне</a>
-      </nav>
-    </header>
-    <aside id="foto_menu"></aside>
-    <section id="page_body">
-    {% block page_body %}
-    {% endblock %}
+  <header id=logo>Лого</header>
+  <section id="page_body">
+    <nav id="main">
+      <ul>
+        <li><a class="menu" href=#>Главная</a></li>
+        <li><a class="menu" href=#>Услуги</a></li>
+        <li><a class="menu" href=#>Галерея</a></li>
+        <li><a class="menu" href=#>Вопрос-Ответ</a></li>
+        <li><a class="menu" href=#>О Салоне</a></li>
+      </ul>
+    </nav>
+    <nav id="images">
+      <div id="coin-slider">
+        <a href="img0_url" target="_blank">
+          <img src="/media/media/nav_image_1.png">
+          <span>
+            Decription for img0
+          </span>
+        </a>
+        <a href="img1_url" target="_blank">
+          <img src="/media/media/nav_image_2.png">
+          <span>
+            Decription for img1
+          </span>
+        </a>
+      </div>
+    </nav>
+    <section id="content">
+      {% block content %}
+      {% endblock content %}
     </section>
     <footer>
-      Подвал
+      Copyright&copy; 2011
+      <section>Разработка: <a href="#">Колчин Максим</a> Дизайн: <a href="#">Гулый Сергей</a></section>
     </footer>
   </section>
 </body>
