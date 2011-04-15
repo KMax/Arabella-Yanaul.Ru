@@ -73,18 +73,9 @@ nav ul li {
 }
 /*---Main menu---END*/
 
-/*---Slide menu---*/
-#images{
-  margin:0 auto;
-  width: 850px;
-  height: 300px;
-  box-shadow: -5px 5px 20px 2px #000000;
-}
-/*---Slide menu---END*/
-
 /*---Контент---*/
 #content {
-  padding: 10px 25px 10px 25px;
+  padding: 0 25px 10px 25px;
 }
 
 /*---Подвал---*/
