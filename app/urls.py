@@ -1,6 +1,5 @@
 from django.conf.urls.defaults import patterns, include
 from defapp.views import start_page
-from defapp.views import services
 from defapp.views import about_us
 from defapp.views import login_page
 from defapp.views import logout_page
@@ -11,7 +10,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^$', start_page),
-    (r'^services/$', services),
+    (r'^services/', include('services.urls')),
     (r'^about/$', about_us),
     (r'^qa/', include('qa.urls')),
     (r'^gallery/$', start_page),
@@ -19,6 +18,7 @@ urlpatterns = patterns('',
     (r'^logout/$', logout_page),
     (r'^admin/', include('adminpanel.urls')),
     (r'^superadmin/',include(admin.site.urls)),
+    (r'^admin_tools/', include('admin_tools.urls')),
 )
 
 if settings.DEBUG:
