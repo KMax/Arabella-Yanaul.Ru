@@ -1,66 +1,38 @@
 {% extends "base.html" %}
 {% block head %}
-<link rel="stylesheet" href="/media/css/services.css">
+  <link rel="stylesheet" href="/media/css/services.css">
+  <script type="text/javascript" src="/media/js/services.js"></script>
 {% endblock %}
-{% block contentheader %}
-Услуги
-{% endblock %}
+
 {% block content %}
-  <ul>
-      <h2>Уход за волосами</h2>
-      <li>
-          мужской, женский зал;
-      </li>
-      <li>
-          окрашивание;
-      </li>
-      <li>
-          химическая завивка;
-      </li>
-      <li>
-          долговременная укладка;
-      </li>
-      <li>
-          прически вечерние и свадебные;
-      </li>
-      <li>
-          мелирование;
-      </li>
-      <li>
-          колорирование;
-      </li>
-      <li>
-          тонирование;
-      </li>
-  </ul>
-  <ul>
-      <h2>Косметология</h2>
-      <li>
-          макияж вечерний и свадебный;
-      </li>
-      <li>
-          депилляция волос воском;
-      </li>
-      <li>
-          прокол ушей;
-      </li>
-      <li>
-          наращивание ресниц
-      </li>
-      <li>
-          оформление и окрашивание ресниц и бровей
-      </li>
-  </ul>
-  <ul>
-      <h2>Уход за ногтями</h2>
-      <li>
-          маникюр;
-      </li>
-      <li>
-          педикюр;
-      </li>
-      <li>
-          наращивание ногтей (гелем, акрилом на верхних формах);
-      </li>
-  </ul>
+  <section id="mod_des">
+
+  </section>
+  <aside id="service_list">
+    <nav>
+      <ul>
+      {% for section in section_list %}
+        <li>{{ section.title }}</li>
+        <ul>
+        {% for service in section.get_services %}
+          <li><a href="{{ service.id }}">{{ service.title }}</a></li>
+        {% endfor %}
+        </ul>
+      {% endfor %}
+      </ul>
+    </nav>
+  </aside>
+  <section id="service_des">
+    <h1>Парикмахерский зал</h1>
+    <h2>Элюминиромание волос</h2>
+    <p>Короткое описание элюминирования волос</p>
+    <section>
+      <h2>Цены</h2>
+      <ul>
+        <li><p>Название</p><p>Цена</p></li>
+        <li><p>Название</p><p>Цена</p></li>
+        <li><p>Название</p><p>Цена</p></li>
+      </ul>
+    </section>
+  </section>
 {% endblock %}

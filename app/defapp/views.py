@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from django.contrib import auth
 from django.http import HttpResponseRedirect
 from news.models import News
+from services.models import ServiceSection
 
 def start_page(request):
     news_list = News.objects.order_by('-date')
@@ -10,9 +11,6 @@ def start_page(request):
 
 def about_us(request):
     return render_to_response('about.html', locals())
-
-def services(request):
-    return render_to_response('services.html', locals())
 
 def prices(request):
     return render_to_response('prices.html', locals())
