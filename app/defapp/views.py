@@ -31,3 +31,6 @@ def login_page(request):
 def logout_page(request):
     auth.logout(request)
     return HttpResponseRedirect("/")
+
+def preview_page(request):
+    return render_to_response('preview.html',locals())
