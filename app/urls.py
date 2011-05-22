@@ -1,10 +1,10 @@
-from django.conf.urls.defaults import patterns
-from defapp.views import preview_page
+from django.conf.urls.defaults import patterns, include
+from defapp.views import index_page
 from app import settings
 
 urlpatterns = patterns('',
-    (r'^$', preview_page),
-#    (r'^services/', include('services.urls')),
+    (r'^$', index_page),
+    (r'^news/', include('app.news.urls')),
 #    (r'^about/$', about_us),
 #    (r'^qa/', include('qa.urls')),
 #    (r'^gallery/$', start_page),
