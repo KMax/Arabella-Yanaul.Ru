@@ -1,85 +1,46 @@
-@charset "utf-8";
-
-/*Глобальное обнуление отступов и полей.*/
-*{
-  margin: 0;
-  padding: 0;
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
 }
 
-header,
-nav,
-section,
-article,
-aside,
-footer {
-  display: block
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display:block;
 }
 
 body {
-  background: #040200 url('/media/media/body_bg.png') no-repeat fixed;
-  width: 900px;
-  margin: auto;
-}
-
-/*---Логотип---*/
-header#logo {
-  width:100%;
-  height: 200px;
-}
-
-/*---Страница---*/
-#page_body {
+  background-color: #B00000;
+  color: #FFFFFF;
   width: 100%;
-  background-image: url("/media/media/page_bg.png");
-  background-position: 0px -2px;
-  /*background-attachment: fixed;*/
-  border: 1px solid #000000;
-  box-shadow: -5px 10px 10px 5px #000000;
-  margin-bottom: 50px;
-}
 
-/*---Main menu---*/
-#main {
-  width:100%;
-  text-align: right;
-}
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
 
-.menu{
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  font-family: serif;
-  font-stretch: expanded;
-  text-shadow: -5px 5px 3px #000000;
-}
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-pack: center;
+  -moz-box-align: center;
 
-.menu:visited{
-  color: white;
-}
-
-.menu:hover{
-  transition:all ls easy-in-out;
-  -moz-transition:all ls easy-in-out;
-  -webkit-transition:all ls easy-in-out;
-  transform: translate(-1px, 1px);
-  -moz-transform: translate(-1px, 2px);
-  -webkit-transform: translate(-1px, 2px);
-}
-
-#main ul li {
-  display: inline-block;
-  list-style-type: none;
-  margin: 28px;
-}
-/*---Main menu---END*/
-
-/*---Контент---*/
-#content {
-  padding: 0 25px 10px 25px;
-}
-
-/*---Подвал---*/
-footer {
-  color: #ffffff;
-  margin: 100px 25px 10px 25px;
+  display: box;
+  box-orient: vertical;
+  box-pack: center;
+  box-align: center;
 }

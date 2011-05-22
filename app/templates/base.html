@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Салон красоты "Арабэлла"</title>
+  <meta charset="utf-8" />
+  <title>Шарм - салон красоты, парикмахерская, маникюр, педикюр, массаж и т.д.</title>
+  <meta name="author" content="Maxim Kolchin" />
+  <meta name="description" content="Шарм - салон красоты, парикмахерская, маникюр, педикюр, массаж и т.д." />
+  <meta name="keywords" content="Янаул,салон,красоты,Шарм,салон красоты,маникюр,педикюр,массаж" />
   <link rel="stylesheet" type="text/css" href="/media/css/base.css"/>
-  <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
   {% block head %}
   {% endblock head %}
 </head>
 <body>
-  <header id=logo>Лого</header>
-  <section id="page_body">
-    <nav id="main">
-      <ul>
-        <li><a class="menu" href="/">Главная</a></li>
-        <li><a class="menu" href="/services/">Услуги</a></li>
-        <li><a class="menu" href=#>Галерея</a></li>
-        <li><a class="menu" href=#>Вопрос-Ответ</a></li>
-        <li><a class="menu" href="#">О Салоне</a></li>
-      </ul>
-    </nav>
-    <section id="content">
-      {% block content %}
-      {% endblock content %}
-    </section>
-    <footer>
-      Текущая версия оптимизированна под <a href="http://www.mozilla.com/ru/firefox/">Firefox 4</a>
-      <section>Разработка: <a href="http://kolmax.pp.ru">Колчин Максим</a> Дизайн: <a href="#">Гулый Сергей</a></section>
-    </footer>
-  </section>
-</body></html>
+{% block body %}
+{% endblock %}
+<!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter1393843 = new Ya.Metrika({id:1393843,
+                    clickmap:true,
+                    accurateTrackBounce:true});
+        }
+        catch(e) { }
+    });
+})(window, 'yandex_metrika_callbacks');
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/1393843" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
