@@ -53,12 +53,7 @@ body {
 }
 
 #logo {
-  margin: 0 0 100px 0;
-}
-
-#logo p {
-  font-size: 700%;
-  font-family: 'EkaterinaVelikayaOneRegular', cursive;
+  margin: 50px 0 50px 0;
 }
 
 footer section {
