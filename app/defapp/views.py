@@ -3,7 +3,6 @@ from django.shortcuts import render_to_response
 from django.contrib import auth
 from django.http import HttpResponseRedirect
 from news.models import News
-from services.models import ServiceSection
 
 def start_page(request):
     news_list = News.objects.order_by('-date')
@@ -31,3 +30,6 @@ def login_page(request):
 def logout_page(request):
     auth.logout(request)
     return HttpResponseRedirect("/")
+
+def preview_page(request):
+    return render_to_response('preview.html',locals())
