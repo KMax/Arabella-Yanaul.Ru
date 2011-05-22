@@ -11,6 +11,15 @@ section#right {
   float: right;
 }
 
+/*---Slide menu---*/
+#images{
+  margin:0 auto 10px;
+  width: 850px;
+  height: 300px;
+  box-shadow: -5px 5px 20px 2px #000000;
+}
+/*---Slide menu---END*/
+
 /*---Widget---*/
 .widget {
   display: block;
