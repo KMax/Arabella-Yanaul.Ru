@@ -1,7 +1,6 @@
 from django.conf.urls.defaults import patterns
 from defapp.views import preview_page
-from django.contrib import admin
-import settings
+from app import settings
 
 urlpatterns = patterns('',
     (r'^$', preview_page),
