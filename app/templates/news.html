@@ -1,10 +1,20 @@
 {% extends "base.html" %}
 {% block head %}
+  <link rel="stylesheet" type="text/css" href="/media/css/news.css"/>
 {% endblock %}
 {% block body %}
-  <section>
+  <section id="news">
     <header>
       <h1>Новости</h1>
     </header>
+    {% for news in news_list %}
+    <article>
+      <header>
+        <h1>{{ news.title }}</h1>
+        <time datetime={{ news.date }}>{{ news.date }}</time>
+      </header>
+      <p>{{ news.text }}</p>
+    </article>
+    {% endfor %}
   </section>
 {% endblock %}
