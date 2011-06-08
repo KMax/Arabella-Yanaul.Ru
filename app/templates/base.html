@@ -7,14 +7,21 @@
   <meta name="description" content="Шарм - салон красоты, парикмахерская, маникюр, педикюр, массаж и т.д." />
   <meta name="keywords" content="Янаул,салон,красоты,Шарм,салон красоты,маникюр,педикюр,массаж" />
   <link rel="stylesheet" type="text/css" href="/media/css/base.css"/>
-  {% block head %}
-  {% endblock head %}
+  <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
+  {% block head %}{% endblock head %}
 </head>
 <body>
+<header>
+  <a href="/">Главная</a>
+  <a href="/news">Новости и акции</a>
+  <a href="#">Услуги и цены</a>
+  <a href="/gallery">Галерея</a>
+  <a href="#">О Салоне</a>
+</header>
 {% block body %}
 {% endblock %}
 <!-- Yandex.Metrika counter -->
-<div style="display:none;"><script type="text/javascript">
+{% comment %}<div style="display:none;"><script type="text/javascript">
 (function(w, c) {
     (w[c] = w[c] || []).push(function() {
         try {
@@ -27,7 +34,7 @@
 })(window, 'yandex_metrika_callbacks');
 </script></div>
 <script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
-<noscript><div><img src="//mc.yandex.ru/watch/1393843" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript><div><img src="//mc.yandex.ru/watch/1393843" style="position:absolute; left:-9999px;" alt="" /></div></noscript>{% endcomment %}
 <!-- /Yandex.Metrika counter -->
 </body>
 </html>

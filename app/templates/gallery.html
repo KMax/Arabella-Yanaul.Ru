@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head %}
+  <link href="/media/css/gallery.css" rel="stylesheet">
+  <script type="text/javascript" src="/media/js/gallery.js"></script>
+{% endblock %}
+{% block body %}
+  <img id="logo" alt='Логотип салона красоты "Шарм"' src="/media/media/logo_mini.png"/>
+  <section id="gallery">
+    <nav>
+      <a class="pred" href="#" id="-1">Пред</a>
+      <a class="next" href="#" id={{ 1 }}>След</a>
+    </nav>
+    <img id="0" src={{ current.image.url }} />
+    <p>{{ current.name }}</p>
+  </section>
+{% endblock %}

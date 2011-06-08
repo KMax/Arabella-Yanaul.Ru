@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="/media/css/news.css"/>
+{% endblock %}
+{% block body %}
+  <img id="logo" alt='Логотип салона красоты "Шарм"' src="/media/media/logo_mini.png"/>
+  <section id="news">
+    <header>
+      <h1>Новости</h1>
+      <a href="/news/feed/">Подписаться на новости</a>
+    </header>
+    {% for news in news_list %}
+    <article>
+      <header>
+        <h1>{{ news.title }}</h1>
+        <time class="small_text" datetime={{ news.date }}>{{ news.date|date }}</time>
+      </header>
+      <p>{% autoescape off %}{{ news.text }}{% endautoescape %}</p>
+    </article>
+    {% endfor %}
+  </section>
+{% endblock %}
