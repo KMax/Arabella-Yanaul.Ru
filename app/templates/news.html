@@ -15,7 +15,7 @@
         <h1>{{ news.title }}</h1>
         <time class="small_text" datetime={{ news.date }}>{{ news.date|date }}</time>
       </header>
-      <p>{{ news.text }}</p>
+      <p>{% autoescape off %}{{ news.text }}{% endautoescape %}</p>
     </article>
     {% endfor %}
   </section>

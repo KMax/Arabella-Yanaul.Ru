@@ -7,9 +7,15 @@ class Photo(models.Model):
     pub_date = models.DateField(verbose_name="дата публикации")
     image = models.ImageField(upload_to="gallery/images")
 
+    def __unicode__(self):
+        return self.name
+
+    def __repr__(self):
+        return self.name
+
     class Meta:
         db_table = "gallery"
-        verbose_name="фотография"
-        verbose_name_plural = "фотографии"
+        verbose_name="фото"
+        verbose_name_plural = "фото"
 
 
