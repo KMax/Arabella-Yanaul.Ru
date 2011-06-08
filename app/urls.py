@@ -8,6 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^$', index_page),
     (r'^news/', include('app.news.urls')),
+    (r'^gallery/', include('app.gallery.urls')),
     (r'^admin/',include(admin.site.urls)),
     (r'^admin_tools/', include('admin_tools.urls')),
 #    (r'^about/$', about_us),
