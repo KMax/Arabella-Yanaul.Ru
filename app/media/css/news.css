@@ -1,0 +1,21 @@
+body {
+  background-color: #B00000;
+  color: #ffffff;
+}
+
+#logo {
+  margin: 10px 0 0 10px;
+}
+
+#news {
+  width: 50%;
+  margin: auto;
+}
+
+#news article {
+  padding: 0 0 10px 0;
+}
+
+.small_text {
+  font-size: 80%;
+}
