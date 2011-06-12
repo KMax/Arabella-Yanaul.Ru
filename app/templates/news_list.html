@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="/media/css/news.css"/>
+{% endblock %}
+{% block body %}
+  <section id="news">
+    <header>
+      <a href="/news/feed/">Подписаться на новости</a>
+    </header>
+    {% for news in news_list %}
+    <article>
+      <header>
+        <h1><a href="/news/{{ news.id }}">{{ news.title }}</a></h1>
+        <time class="small_text" datetime={{ news.date }}>{{ news.date|date }}</time>
+      </header>
+      <p>{% autoescape off %}{{ news.intro }}{% endautoescape %}
+      {% if not news.is_short_news %}
+        <a href="/news/{{ news.id }}">Далее...</a>
+      {% endif %}
+      </p>
+    </article>
+    {% endfor %}
+    {% if pred_page_id %}
+      <a href="/news/page/{{ pred_page_id }}">Предыдущая</a>
+    {% endif %}
+    {% if next_page_id %}
+      <a href="/news/page/{{ next_page_id }}">Следующая</a>
+    {% endif %}
+  </section>
+{% endblock %}
