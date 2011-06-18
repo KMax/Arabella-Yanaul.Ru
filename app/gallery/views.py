@@ -6,8 +6,14 @@ from app.utils.response import JSONResponse
 def start_page(request):
     photos = Photo.objects.order_by("-pub_date")[:2]
     current = photos[0]
-    next = photos[1]
-    return render_to_response("gallery.html",locals())
+    return render_to_response("gallery/album.html",locals())
+
+def album_page(request):
+    pass
+
+def get_images(request):
+    photos = Photo.objects.order_by("-pub_date")
+    return render_to_response("gallery/image_list.html", locals())
 
 def json_get_photo(request):
     if request.method == "POST":

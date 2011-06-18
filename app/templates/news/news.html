@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="/media/css/news.css"/>
+{% endblock %}
+{% block body %}
+  <article>
+    <header>
+      <h1><a href="/news/{{ news.id }}">{{ news.title }}</a></h1>
+      <time class="small_text" datetime={{ news.date }}>{{ news.date|date }}</time>
+    </header>
+    <p>{% autoescape off %}{{ news.text }}{% endautoescape %}</p>
+  </article>
+{% endblock %}

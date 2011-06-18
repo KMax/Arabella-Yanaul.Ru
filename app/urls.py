@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import patterns, include
 from defapp.views import index_page
 from app import settings
+from app.defapp.views import pda_page
 from django.contrib import admin
 
 admin.autodiscover()
