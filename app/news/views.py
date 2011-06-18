@@ -9,7 +9,7 @@ def start_page(request):
 
 def get_news(request, id='1'):
     news = News.objects.get(id=id)
-    return render_to_response('news.html',locals())
+    return render_to_response('news/news.html',locals())
 
 def get_page(request, page_id='1'):
     page_id = int(page_id)
@@ -19,4 +19,4 @@ def get_page(request, page_id='1'):
         next_page_id = page_id + 1
     news_list = News.objects.\
                 order_by('-date')[news_per_page*(page_id-1):news_per_page*page_id]
-    return render_to_response('news_list.html', locals())
+    return render_to_response('news/news_list.html', locals())

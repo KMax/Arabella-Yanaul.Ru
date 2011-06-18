@@ -12,6 +12,16 @@ $(document).ready(function(){
     $('.next').click(function(){
         loadPhoto($(this).attr('id'));
     });
+    $('a.origin_image[rel="gallery"]').colorbox({
+        transition: 'none',
+        width: "75%",
+        speed: 300,
+        opacity: 0.7,
+        close: 'закрыть',
+        next: 'след',
+        previous: 'пред',
+        current: ' ({current} из {total})'
+            });
 });
 
 function loadPhoto(id){

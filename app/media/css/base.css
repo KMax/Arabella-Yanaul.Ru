@@ -25,7 +25,8 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-  background-color: #B00000; color: #FFFFFF;
+  background-image: url("/media/media/bg_image.jpg");
+  color: #FFFFFF;
 }
 
 #leftside {
@@ -33,7 +34,7 @@ body {
 }
 
 #rightside {
-  display: inline-block; width: 71%; height: 100%;
+  display: inline-block; width:65%;m height: 100%;
   position: absolute;
   top: 0; left: 340px;
   vertical-align: top;

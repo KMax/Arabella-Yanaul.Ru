@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% block head %}
+  <link href="/media/css/gallery.css" rel="stylesheet" />
+  <link href="/media/css/colorbox/colorbox.css" rel="stylesheet" />
+  <script type="text/javascript" src="/media/js/gallery.js"></script>
+  <script type="text/javascript" src="/media/js/jquery.colorbox-min.js"></script>
+{% endblock %}
+{% block body %}
+  <section id="gallery">
+    {% for photo in photos %}
+      {% thumbnail photo.image "x200" as im%}
+        <a class="origin_image" rel="gallery" title="{{ photo.name }}" href="{{ photo.image.url }}">
+          <img class="thumbnail" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
+        </a>
+      {% endthumbnail %}
+    {% endfor %}
+  </section>
+{% endblock %}
