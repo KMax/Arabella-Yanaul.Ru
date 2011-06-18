@@ -29,13 +29,16 @@ footer, header, hgroup, menu, nav, section {
   url('webfonts/ttf/style_187672.ttf') format('truetype'),
   url('webfonts/svg/style_187672.svg#Fabryka4FMedium') format('svg');
 }
-body {background: fixed url('/media/media/003.jpg'); color: #424242;}
+body {background: fixed url('/media/media/003.jpg'); color: #303030;}
 #body {width: 970px; margin: 20px auto 20px;}
 #header {background-color: #D83636; padding:  5px 5px 5px 10px;}
 #header p {
   font-size: 1.2em; font-family: serif; color: #FFFFFF; display: inline-block;
   vertical-align: 150%;
 }
+#header section { margin: 5px; float: right;}
+#header section p {display: block; font-size: .8em;}
+#header section p.info_header {font-weight: bold;}
 #center {background-color: rgba(216, 97, 97, 0.5);}
 #content {display: inline-block; width: 750px; padding: 10px;}
 /* Global menu */
