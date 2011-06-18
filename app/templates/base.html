@@ -11,44 +11,28 @@
   {% block head %}{% endblock head %}
 </head>
 <body>
-  <section id="leftside">
-    <img src="/media/media/logo_mini.png"/>
-    <p>"Мы поднимем вам настроение!"</p>
-    <section id="address" style="margin-top:60px;">
-      <header>
-        <h1>Адрес</h1>
-      </header>
-      <p>г.Янаул, ул.Победы 68, 2-й этаж</p>
+  <section id="body">
+    <section id="header">
+      <a href="/"><img id="logo" src="/media/media/logo_micro.png"/></a>
+      <p>Салон красоты</p>
     </section>
-    <section>
-      <header>
-        <h1>График работы</h1>
-      </header>
-      <p>Ежедневно 8:30-19:30</p>
+    <section id="center">
+      <section id="content">
+        {% block body %}
+        {% endblock %}
+      </section>
+      <nav id="menu">
+          <a href="/">Главная</a>
+          <a href="/news">Новости и акции</a>
+          <a href="#">Услуги и цены</a>
+          <a href="/gallery">Галерея</a>
+          <a href="#">О Салоне</a>
+      </nav>
     </section>
-    <section>
-      <header>
-        <h1>Контакты</h1>
-      </header>
-      <p>Тел: (34760) 5-47-61</p>
-    </section>
+    <div id="line"><br/></div>
+    <footer>
+      Copyright 2011
+    </footer>
   </section>
-  <section id="rightside">
-    <nav id="menu">
-      <ol>
-        <li><a class="link" href="/">Главная</a></li>
-        <li><a class="link" href="/news">Новости и акции</a></li>
-        <li><a class="link" href="#">Услуги и цены</a></li>
-        <li><a class="link" href="/gallery">Галерея</a></li>
-        <li><a class="link" href="#">О Салоне</a></li>
-      </ol>
-    </nav>
-    <section id="content">
-    {% block body %}{% endblock %}
-    </section>
-  </section>
-  <footer>
-    
-  </footer>
 </body>
 </html>
