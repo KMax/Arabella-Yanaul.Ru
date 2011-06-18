@@ -17,11 +17,16 @@
       </p>
     </article>
     {% endfor %}
-    {% if pred_page_id %}
-      <a href="/news/page/{{ pred_page_id }}">Предыдущая</a>
-    {% endif %}
-    {% if next_page_id %}
-      <a href="/news/page/{{ next_page_id }}">Следующая</a>
-    {% endif %}
+    <footer>
+      <p>Страницы:
+      {% for page_num in amount_pages %}
+        {% if page_num == page_id %}
+          <a class="current_page" href="/news/page/{{ page_num }}">{{ page_num }}</a>
+        {% else %}
+          <a href="/news/page/{{ page_num }}">{{ page_num }}</a>
+        {% endif %}
+      {% endfor %}
+      </p>
+    </footer>
   </section>
 {% endblock %}
