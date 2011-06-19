@@ -45,7 +45,7 @@ body {background: fixed url('/media/media/003.jpg'); color: #303030;}
 #menu {width: 195px; display: inline-block; margin: 50px 0 0 0; vertical-align: top;}
 #menu a {
   display: block; margin: 10px 0 10px 0; font-family: 'Fabryka4FMedium', serif;
-  color: #FFF; font-weight: bold; font-size: 1em; text-decoration: none;
+  font-weight: bold; font-size: 1em; text-decoration: none;
 }
 #menu a:hover {padding-left: 10px;}
 /* --- */

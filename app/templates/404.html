@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Шарм - салон красоты, парикмахерская, маникюр, педикюр, массаж и т.д.</title>
+  <meta name="author" content="Maxim Kolchin" />
+  <meta name="description" content="Шарм - салон красоты, парикмахерская, маникюр, педикюр, массаж и т.д." />
+  <meta name="keywords" content="Янаул,салон,красоты,Шарм,салон красоты,маникюр,педикюр,массаж" />
+  <link rel="stylesheet" type="text/css" href="/media/css/base.css"/>
+  <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
+  {% block head %}{% endblock head %}
+</head>
+<body>
+  <section id="body">
+    <section id="header">
+      <a href="/"><img id="logo" src="/media/media/logo_micro.png"/></a>
+      <p>Салон красоты</p>
+      <section>
+        <p class="info_header">Адрес</p>
+        <p>г. Янаул, ул.Победы 68, 2-й этаж</p>
+        <p>(здание старого автовокзала)</p>
+        <p class="info_header">График работы</p>
+        <p>Пн - Вс 08:30 - 19:30</p>
+        <p>Без обеда</p>
+        <p class="info_header">Контакты</p>
+        <p>Тел: (34760) 5-47-61</p>
+      </section>
+    </section>
+    <section id="center">
+      <section id="content">
+        {% block body %}
+          К сожалению мы не нашли ничего по данному адресу...
+        {% endblock %}
+      </section>
+      <nav id="menu">
+          <a href="/">Главная</a>
+          <a href="/news">Новости и акции</a>
+          <a href="#">Услуги и цены</a>
+          <a href="/gallery">Галерея</a>
+          <a href="#">О Салоне</a>
+      </nav>
+    </section>
+    <div id="line"><br/></div>
+    <footer>
+      <p>Copyright 2011</p>
+     </footer>
+  </section>
+</body>
+</html>
