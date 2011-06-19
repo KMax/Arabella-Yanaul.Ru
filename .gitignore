@@ -1,0 +1,10 @@
+.*
+*.pyc
+*.pyo
+django.wsgi
+media/admin/
+app/media/cache*
+app/media/gallery/*
+app/settings.py
+app/cms_settings.py
+app/*/migrations/

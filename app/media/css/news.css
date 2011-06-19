@@ -1,20 +1,8 @@
-body {
-  background-color: #B00000;
-  color: #ffffff;
+#news {margin: auto;}
+#news footer {
+    border-top: solid #D83636 thin;
+    margin-top: 10px; padding-top: 5px;
 }
-
-#logo {
-  margin: 10px 0 0 10px;
-}
-
-#news {
-  margin: auto;
-}
-
-#news article {
-  padding: 0 0 10px 0;
-}
-
-.small_text {
-  font-size: 80%;
-}
+#news article {margin-bottom: 10px;}
+a.current_page {text-decoration: none;}
+.small_text {font-size: 80%;}
