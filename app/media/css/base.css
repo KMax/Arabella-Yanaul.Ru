@@ -23,22 +23,22 @@ footer, header, hgroup, menu, nav, section {
     display:block;
 }
 @font-face {font-family: 'Fabryka4FMedium';
-  src: url('/media/webfonts/eot/style_187672.eot');
-  src: url('/media/webfonts/eot/style_187672.eot?#iefix') format('embedded-opentype'),
-  url('/media/webfonts/woff/style_187672.woff') format('woff'),
-  url('/media/webfonts/ttf/style_187672.ttf') format('truetype'),
-  url('/media/webfonts/svg/style_187672.svg#Fabryka4FMedium') format('svg');
+  src: url('/media/fonts/webfonts/eot/style_187672.eot');
+  src: url('/media/fonts/webfonts/eot/style_187672.eot?#iefix') format('embedded-opentype'),
+  url('/media/fonts/webfonts/woff/style_187672.woff') format('woff'),
+  url('/media/fonts/webfonts/ttf/style_187672.ttf') format('truetype'),
+  url('/media/fonts/webfonts/svg/style_187672.svg#Fabryka4FMedium') format('svg');
 }
 body {background: fixed url('/media/media/main_bg.jpg'); color: #303030;}
 #body {width: 970px; margin: 20px auto 20px;}
 #header {background-color: #D83636; padding: 5px;}
 #header p {
-  font-size: 13pt; font-family: 'Fabryka4FMedium', serif; color: #FFF;
+  font-size: 13pt; font-family: 'Fabryka4FMedium', serif; color: #FFF; font-weight: 100;
   display: inline-block; vertical-align: 140%;
 }
 #header section {margin: 3px; float: right;}
 #header section p {
-    display: block; font-size: 9pt; font-family: 'Fabryka4FMedium',serif; padding: 0;
+    display: block; font-size: 9pt; font-family: serif; padding: 0;
 }
 #header section p.info_header {font-weight: bold;}
 #center {background-color: rgba(216, 97, 97, 0.5);}
@@ -46,7 +46,7 @@ body {background: fixed url('/media/media/main_bg.jpg'); color: #303030;}
 /* Global menu */
 #menu {width: 195px; display: inline-block; margin: 50px 0 0 0; vertical-align: top;}
 #menu a {
-  display: block; margin: 10px 0 10px 0; font-family: 'Fabryka4FMedium', serif;
+  display: block; margin: 10px 0 10px 0; font-family: serif;
   font-weight: bold; font-size: 1em; text-decoration: none;
 }
 #menu a:hover:before {padding-left: 10px; content: url('/media/media/menu_flower.png');}
@@ -54,3 +54,5 @@ body {background: fixed url('/media/media/main_bg.jpg'); color: #303030;}
 #line {background-color: #D83636; height: 50px;}
 #body > footer {background-color: #B00000; padding: 5px; color: #FFF;}
 a {color: #FFFFFF;}
+footer p {display: inline-block;}
+a.inconsp {font-size: 0.8em; color: #AAAAAA;}
