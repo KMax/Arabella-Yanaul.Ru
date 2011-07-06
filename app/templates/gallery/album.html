@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% block head %}
+  <link href="/media/css/gallery.css" rel="stylesheet">
+  <script type="text/javascript" src="/media/js/gallery.js"></script>
+{% endblock %}
+{% block body %}
+  <section id="gallery">
+    <nav>
+      <a class="pred" href="#" id="-1">Пред</a>
+      <a class="next" href="#" id={{ 1 }}>След</a>
+    </nav>
+    {% thumbnail current.image "x200" as im %}
+      <img id="0" src={{ im.url }} />
+    {% endthumbnail %}
+    <p>{{ current.name }}</p>
+  </section>
+{% endblock %}

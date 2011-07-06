@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="/media/css/news.css"/>
+{% endblock %}
+{% block body %}
+  <section id="news">
+    {% for news in news_list %}
+    <article>
+      <header>
+        <h1><a href="/news/{{ news.id }}">{{ news.title }}</a></h1>
+        <time class="small_text" datetime={{ news.date }}>{{ news.date|date }}</time>
+      </header>
+      <p>{% autoescape off %}{{ news.intro }}{% endautoescape %}
+      {% if not news.is_short_news %}
+        <a href="/news/{{ news.id }}">Далее...</a>
+      {% endif %}
+      </p>
+    </article>
+    {% endfor %}
+    <footer>
+      <p>Страницы:
+      {% for page_num in amount_pages %}
+        {% if page_num == page_id %}
+          <a class="current_page" href="/news/page/{{ page_num }}">{{ page_num }}</a>
+        {% else %}
+          <a href="/news/page/{{ page_num }}">{{ page_num }}</a>
+        {% endif %}
+      {% endfor %}
+      </p>
+    </footer>
+  </section>
+{% endblock %}

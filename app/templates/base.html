@@ -6,28 +6,48 @@
   <meta name="author" content="Maxim Kolchin" />
   <meta name="description" content="Шарм - салон красоты, парикмахерская, маникюр, педикюр, массаж и т.д." />
   <meta name="keywords" content="Янаул,салон,красоты,Шарм,салон красоты,маникюр,педикюр,массаж" />
+  <meta name='yandex-verification' content='5da8ae2bbe8f81e1' />
+  <meta name="google-site-verification" content="q9yFG80G1J5-j1oboavI6Eavhq3U_h31dslf3t1WttE" />
   <link rel="stylesheet" type="text/css" href="/media/css/base.css"/>
-  {% block head %}
-  {% endblock head %}
+  <script type="text/javascript" src="http://yandex.st/jquery/1.6.1/jquery.min.js"></script>
+  {% block head %}{% endblock head %}
 </head>
 <body>
-{% block body %}
-{% endblock %}
-<!-- Yandex.Metrika counter -->
-<div style="display:none;"><script type="text/javascript">
-(function(w, c) {
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter1393843 = new Ya.Metrika({id:1393843,
-                    clickmap:true,
-                    accurateTrackBounce:true});
-        }
-        catch(e) { }
-    });
-})(window, 'yandex_metrika_callbacks');
-</script></div>
-<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
-<noscript><div><img src="//mc.yandex.ru/watch/1393843" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+  <header>
+      <a class="inconsp" href="/admin">Вход</a>
+  </header>
+  <section id="body">
+    <section id="header">
+      <a href="/"><img id="logo" src="/media/media/logo_micro.png"/></a>
+      <p>Салон красоты</p>
+      <section>
+        <p class="info_header">Адрес</p>
+        <p>г. Янаул, ул.Победы 68, 2-й этаж</p>
+        <p>(здание старого автовокзала)</p>
+        <p class="info_header">График работы</p>
+        <p>Пн - Вс 08:30 - 19:30, без обеда</p>
+        <p class="info_header">Контакты</p>
+        <p>Тел: (34760) 5-47-61</p>
+      </section>
+    </section>
+    <section id="center">
+      <section id="content">
+        {% block body %}
+        {% endblock %}
+      </section>
+      <nav id="menu">
+          <a href="/"> Главная</a>
+          <a href="/news"> Новости и акции</a>
+          <a href="#"> Услуги и цены</a>
+          <a href="#"> Галерея</a>
+          <a href="#"> О Салоне</a>
+      </nav>
+    </section>
+    <div id="line"><br/></div>
+    <footer>
+      <p>Copyright 2011</p>
+     </footer>
+  </section>
+{#<!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter1393843 = new Ya.Metrika({id:1393843, enableAll: true}); } catch(e) { } }); })(window, 'yandex_metrika_callbacks');</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/1393843" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->#}
 </body>
 </html>

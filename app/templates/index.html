@@ -1,67 +1,26 @@
 {% extends "base.html" %}
-
 {% block head %}
-  <link rel="stylesheet" href="/media/css/index.css">
-  <link rel="stylesheet" type="text/css" href="/media/css/coin-slider-styles.css"/>
+  <link rel="stylesheet" type="text/css" href="/media/css/index.css"/>
   <script type="text/javascript" src="/media/js/coin-slider.min.js"></script>
-  <script type="text/javascript" src="/media/js/index.js"></script>
+  <link href="/media/css/coin-slider-styles.css" rel="stylesheet" />
 {% endblock %}
-
-{% block content %}
-  <nav id="images">
-      <div id="coin-slider">
-        <a href="img0_url" target="_blank">
-          <img src="/media/media/nav_image_1.png">
-          <span>
-            Стрижки: мужская, женская, детская...
-          </span>
-        </a>
-        <a href="img1_url" target="_blank">
-          <img src="/media/media/nav_image_2.png">
-          <span>
-            Описание картинки
-          </span>
-        </a>
-      </div>
-    </nav>
-  <section id="left">
-    <section class="widget">
-      <h1>Запись в салон</h1>
-      <form method="POST" id="entry">
-        <fieldset>
-          <ol>
-            <li>
-              <label for=name>Имя</label>
-              <input id=name name=name type="text" required=""/>
-            </li>
-            <li>
-              <label for=phone>Телефон</label>
-              <input id=phone name=phone type="text" required=""/>
-            </li>
-            <li><input type=submit value="Далее"/></li>
-          </ol>
-        </fieldset>
-      </form>
-    </section>
-    <section class="widget vcard">
-      <h1>Наш адрес</h1>
-      г.Янаул, ул.Азина, д.27</br>
-      ТСЦ "Юбилейный"</br>
-      телефон:<span class="tel">+79273052610</span>
-    </section>
-  </section>
-  <section id="right">
-    <section id=news class="widget">
-      <h1>Акции и Новости</h1>
-      {% for news in news_list %}
-      <article>
-        <header>
-          <h1>{{ news.title }}</h1>
-          <p><time pubdate datetime="{{ news.date|date:'cO' }}">{{ news.date|date:'DATE_FORMAT' }}</time></p>
-        </header>
-        <p>{{ news.text }}</p>
-      </article>
-      {% endfor %}
-    </section>
-  </section>
+{% block body %}
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#coin-slider').coinslider({
+      width: 750,
+      height: 300,
+      effect: 'rain',
+      links: false
+      });
+  });
+</script>
+<div id='coin-slider'>
+  <a href="/news/page/1" target="_blank">
+    <img src="/media/media/img_01.jpg" />
+  </a>
+  <a href="/news/page/2" target="_blank">
+    <img src="/media/media/img_02.jpg" />
+  </a>
+</div>
 {% endblock %}

@@ -1,18 +1,20 @@
-from django.conf.urls.defaults import patterns
-from defapp.views import preview_page
+from django.conf.urls.defaults import patterns, include
+from app.defapp.views import index_page
 from app import settings
+from django.conf.urls.defaults import handler404
+from django.views.defaults import page_not_found
+from django.contrib import admin
+
+admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^$', preview_page),
-#    (r'^services/', include('services.urls')),
-#    (r'^about/$', about_us),
-#    (r'^qa/', include('qa.urls')),
-#    (r'^gallery/$', start_page),
-#    (r'^login/$', login_page),
-#    (r'^logout/$', logout_page),
-#    (r'^admin/', include('adminpanel.urls')),
-#    (r'^superadmin/',include(admin.site.urls)),
-#    (r'^admin_tools/', include('admin_tools.urls')),
+    (r'^$', index_page),
+    (r'^news/', include('app.news.urls')),
+    #(r'^gallery/', include('app.gallery.urls')),
+    (r'^admin/',include(admin.site.urls)),
+    (r'^tinymce/', include('tinymce.urls')),
+    (r'^robots.txt$', include('robots.urls')),
+    (handler404, page_not_found),
 )
 
 if settings.DEBUG:
